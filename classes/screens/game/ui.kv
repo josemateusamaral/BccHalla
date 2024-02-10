@@ -1,0 +1,111 @@
+#:import Window kivy.core.window.Window
+
+<Jogo>:
+    FloatLayout:
+
+
+        
+        FloatLayout:
+            id:gameBox
+            canvas.before:
+                Color:
+                    rgba:1,1,1,1
+                Rectangle:
+                    source:'assets/textures/scene/background.jpg'
+                    size:self.size
+                    pos:self.pos
+
+
+        FloatLayout:
+            id:names
+            Label:
+                size_hint:None,None
+                height:50
+                width:50
+                text:'nome'
+                color:0.5,1,0.5,1
+                bold:True
+                id:nome
+
+
+
+        BoxLayout:
+            id:gameData
+            canvas:
+                Color:
+                    rgba:0,0,0,0.8
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+            opacity:0
+            orientation:'vertical'
+            Label:
+                id:sala
+                color:1,0,0,1
+                size_hint_y:0.1
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint_y:None
+                height:50
+                Label:
+                    text:'nickname'
+                Label:
+                    text:'pais'
+            BoxLayout:
+                id:players
+                orientation:'vertical'
+                
+
+
+
+            
+        BoxLayout:
+            id:messageBox
+            opacity:0
+            padding:10
+            orientation:'vertical'
+            Widget:
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint_y:0.1
+                TextInput:
+                    pos:100,100
+                    id:message
+                    font_size:'10sp'
+                    background_color:1,1,1,0.7
+
+
+
+
+        TextInput:
+            id:chat
+            text:'No messages yet'
+            size_hint:None,None
+            height:100
+            width:Window.width / 2
+            pos:10,Window.height - 110
+            background_color:0,0,0,0.7
+            foreground_color:1,1,1,1
+            readonly:True
+            font_size:'10sp'
+            cursor_color:0,0,0,0
+            auto_indent:True
+            markup:True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        

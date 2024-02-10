@@ -1,0 +1,98 @@
+#:import Window kivy.core.window.Window
+
+<Selecionar_Sala>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgba:1,1,1,1
+            Rectangle:
+                source:'assets/textures/scene/i_back.jpg'
+                size:self.size
+                pos:self.pos
+        BoxLayout:
+            padding:Window.width/20
+            spacing:Window.width/20
+            orientation:'vertical'
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgba:0,0,0,0.9
+                    RoundedRectangle:
+                        size:self.size
+                        pos:self.pos
+                orientation:'horizontal'
+                size_hint_y:None
+                height:50
+                Label:
+                    size_hint_x:0.2
+                    text:'seu\nnome'
+                    color:1,0,0,1
+                    bold:True
+                TextInput:
+                    id:name
+                    text:''
+                    font_size:20
+                BoxLayout:
+                    id:list
+                    size_hint_x:None
+                    width:self.minimum_width
+            Widget:
+            Button:
+                text:'Criar uma sala +'
+                color:1,1,1,1
+                bold:True
+                on_release:root.criar()
+                background_color:0.5,0.9,1,0.9
+            Widget:
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgba:0,0,0,0.9
+                    RoundedRectangle:
+                        size:self.size
+                        pos:self.pos
+                orientation:'vertical'
+                padding:10
+                spacing:10
+                size_hint_y:None
+                height:self.minimum_height
+                Label:
+                    text:'entrar em uma sala'
+                    color:1,0,0,1
+                    bold:True
+                    size_hint_y:None
+                    height:50
+                BoxLayout:
+                    size_hint_y:None
+                    height:50
+                    Label:
+                        text:'sala'
+                        size_hint_x:0.2
+                        color:1,0,0,1
+                        bold:True
+                    TextInput:
+                        id:sala
+                        text:'192.168.0.11:3000'
+                    Button:
+                        size_hint_x:0.2
+                        text:'entrar'
+                        color:1,1,1,1
+                        bold:True
+                        on_release:root.entrar()
+                        background_color:0.5,0.9,1,0.9
+
+<CustomDropDown>:
+    Button:
+        text: 'My first Item'
+        size_hint_y: None
+        height: 10
+        #on_release: root.select('item1')
+    Label:
+        text: 'Unselectable item'
+        size_hint_y: None
+        height: 10
+    Button:
+        text: 'My second Item'
+        size_hint_y: None
+        height: 10
+        #on_release: root.select('item2')
